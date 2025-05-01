@@ -9,6 +9,7 @@ class Command(BaseCommand):
     help = 'add the database with users and project-related tasks'
 
     def handle(self, *args, **kwargs):
+        Task.objects.all().delete()
         # Define users
         users_data = [
             {
@@ -104,7 +105,7 @@ class Command(BaseCommand):
                 'assigned_to': user_objects['oreof00024@gmail.com'],
             },
 
-            # Emad's tasks
+             # Emad's tasks (Backend)
             {
                 'title': 'Build Employee List API',
                 'description': 'Provide an endpoint to list, filter, and paginate employee records.',
@@ -115,8 +116,18 @@ class Command(BaseCommand):
                 'description': 'Enable backend logic to allow employees to update their info.',
                 'assigned_to': user_objects['emadbadr227@gmail.com'],
             },
+            {
+                'title': 'JWT Authentication Integration',
+                'description': 'Switch from session auth to token-based JWT.',
+                'assigned_to': user_objects['emadbadr227@gmail.com'],
+            },
+            {
+                'title': 'Bug Fixes in Task Filtering',
+                'description': 'Fix issues when filtering tasks by priority and status.',
+                'assigned_to': user_objects['emadbadr227@gmail.com'],
+            },
 
-            # Yoused's tasks
+            # Yoused's tasks (Frontend)
             {
                 'title': 'Design Task View Page (Frontend)',
                 'description': 'Create a styled, responsive UI for task display for users.',
@@ -125,6 +136,16 @@ class Command(BaseCommand):
             {
                 'title': 'Dark Theme Integration',
                 'description': 'Apply black & orange dark theme across all frontend components.',
+                'assigned_to': user_objects['yoused@example.com'],
+            },
+            {
+                'title': 'Responsive Navbar Design',
+                'description': 'Implement mobile-first navigation bar using Tailwind.',
+                'assigned_to': user_objects['yoused@example.com'],
+            },
+            {
+                'title': 'Task Status Badge Styling',
+                'description': 'Color-code task badges by status dynamically.',
                 'assigned_to': user_objects['yoused@example.com'],
             },
 
